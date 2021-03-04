@@ -1,0 +1,38 @@
+<!--template-->
+<template lang="html">
+  <h1 class='logo'>{{ appName | upper }}</h1>
+</template>
+
+<!--scripts-->
+<script>
+export default {
+  name: 'CoLogo',
+  data () {
+    return {
+      appName: 'Codit'
+    }
+  },
+  filters: {
+    upper (value) {
+      if (!value) {
+        return ''
+      }
+      return value.toUpperCase()
+    }
+  }
+}
+</script>
+
+<!--estilos-->
+<style lang="css" scoped>
+  @import '../assets/css/colors.css';
+  .logo {
+    margin: 0;
+    color: var(--color-lighter-grey);
+    line-height: 2rem;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+    text-shadow: 0 0 20px color(var(--color-blue) blackness(50%));
+  }
+</style>
